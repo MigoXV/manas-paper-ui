@@ -1,27 +1,36 @@
 ---
 name: manas-paper-ui
-description: "Use when Codex needs to migrate, refine, or review MANAS-style paper-minimal UI: OpenAI-like restrained paper surfaces, live meeting console layouts, archive/settings semantics, thin divider hierarchy, workbench density, and avoidance of admin-table feel, thick cards, player shells, large rounded white containers, and stale visual remnants."
+description: "用于在 Web 项目中创建、审查、优化或迁移明确采用 MANAS 或类纸工作空间方向的界面。覆盖安静而高效的工作空间、连续低噪声表面、任务驱动的信息层级、真实产品状态、五类工作型页面范式，以及 Review、Refine、Migrate、Create 四种工作模式。当用户明确提到 MANAS、类纸工作空间、沿用 MANAS 风格，或目标仓库已声明采用 MANAS 时使用；不要仅因普通的‘简洁’‘现代’或‘极简’请求自动触发。"
 ---
 
-# MANAS Paper UI
+# MANAS 类纸工作空间
 
-## Workflow
+## 确定工作模式
 
-1. Inspect the target feature before designing. Identify the real route, component entrypoint, state sources, CSS imports, theme variables, and any existing page-specific conventions.
-2. Read `references/design-system.md` before choosing the visual direction. Use it as the source of truth for MANAS paper-minimal layout, hierarchy, component tone, and anti-patterns.
-3. Read `references/migration-checklist.md` before editing. Follow the checklist to preserve existing data flow, user-visible semantics, and cleanup expectations.
-4. Read `references/assets-guide.md` when the task needs reusable frontend structure. Copy from `assets/styles/manas-paper-ui.css` or `assets/react/ManasPaperWorkbench.tsx` only when it reduces real implementation work.
-5. Make the smallest implementation that moves the target surface into the MANAS paper style. Prefer existing components, CSS variables, icons, and local state contracts.
-6. Verify with the repo's normal frontend checks. For this repository, use `pnpm lint` and `pnpm build`; add `pnpm test:server` when server or shared contracts are affected.
+- **Review**：在用户要求审查、讨论或报告问题时，只收集证据并给出分级结论，不修改文件。
+- **Refine**：在用户笼统要求优化或润色时作为默认模式。保持信息架构、数据契约和主要交互，只做解决问题所需的局部修改。
+- **Migrate**：仅在用户明确要求迁移、重构或重新设计时使用。允许重组目标页面，但保持真实业务行为与用户可见语义。
+- **Create**：在用户要求新建 MANAS 页面时使用。先确认真实任务、内容、状态和目标项目约束，不得用示例内容替代缺失的产品决策。
 
-## Operating Rules
+如果 Refine 无法解决结构性问题，先用代码或页面证据解释原因，再请求用户将范围升级为 Migrate。
 
-- Preserve product semantics over visual decoration. A queued or running task is not an error; pause, save, generate, retry, and end states must match actual state.
-- Use paper-like structure: white or near-white surfaces, breathing room, thin separators, restrained borders, compact controls, and scannable workbench density.
-- Avoid recreating rejected UI: traditional admin tables, thick card grids, large rounded white containers, standalone player shells, decorative blobs, and leftover old selectors.
-- Clean up old JSX, styles, dead files, and stale responsive rules when replacing a visual pattern.
+## 工作流程
 
-## Bundled Assets
+1. 检查目标项目的约定、入口、调用链、真实状态来源、组件体系、样式方案、主题、语言、构建命令和测试能力。优先发现事实，不凭视觉猜测产品行为。
+2. 阅读 `references/design-foundations.md`，按其中的优先级、表面关系、密度、色彩、交互和后备尺度作出设计判断。
+3. 阅读 `references/page-archetypes.md`，根据用户的主任务选择页面范式；混合页面最多指定一个主范式和一个辅助范式。
+4. 在 Refine、Migrate、Create 或涉及复杂状态的 Review 中阅读 `references/implementation-method.md`。先映射现有设计系统并生成页面状态矩阵，再决定实现结构。
+5. 在授权模式内完成最小必要工作。修改共享组件、全局壳层、API、服务端、持久化或共享契约前，先说明证据、影响面和验证方案并请求扩展范围。
+6. 阅读 `references/verification-and-delivery.md`，执行与风险相称的分层验证，并按当前模式的交付契约报告结果。严格区分已验证、失败和无法验证的项目。
 
-- `assets/styles/manas-paper-ui.css`: reusable paper-minimal CSS tokens, shell, split workspace, transcript stream, side panel, controls, and state badges.
-- `assets/react/ManasPaperWorkbench.tsx`: dependency-light React skeleton for a MANAS-style workbench page with slots for status, primary stream, side content, and controls.
+## 不可妥协的顺序
+
+按以下顺序判断与处理问题：
+
+1. 业务状态、数据与文案真实。
+2. 核心任务可以完成并具有恢复路径。
+3. 无障碍与输入方式等价。
+4. 信息层级、页面范式与响应式任务优先级正确。
+5. 视觉一致、密度适当且实现整洁。
+
+不得用更漂亮的表面抵消前四项失败。不得未经授权重命名产品概念、创造业务状态、扩大共享修改范围，或把某个示例骨架当作固定 MANAS 布局。

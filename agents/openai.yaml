@@ -1,4 +1,4 @@
 interface:
-  display_name: "MANAS 类纸风迁移"
-  short_description: "MANAS paper-minimal UI assets and migration guide"
-  default_prompt: "Use $manas-paper-ui to migrate a MANAS-style paper-minimal interface to this page."
+  display_name: "MANAS 类纸工作空间"
+  short_description: "创建、审查、优化与迁移安静克制的 MANAS Web 工作空间"
+  default_prompt: "使用 $manas-paper-ui 审查、优化、迁移或创建这个 MANAS 类纸 Web 工作空间。"
