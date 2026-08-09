@@ -1,6 +1,6 @@
 ---
 name: manas-paper-ui
-description: "用于在 Web 项目中创建、审查、优化或迁移明确采用 MANAS 或类纸工作空间方向的界面。覆盖安静而高效的工作空间、连续低噪声表面、任务驱动的信息层级、真实产品状态、五类工作型页面范式，以及 Review、Refine、Migrate、Create 四种工作模式。当用户明确提到 MANAS、类纸工作空间、沿用 MANAS 风格，或目标仓库已声明采用 MANAS 时使用；不要仅因普通的‘简洁’‘现代’或‘极简’请求自动触发。"
+description: "用于在 Web 项目中创建、审查、优化或迁移明确采用 MANAS 或类纸工作空间方向的界面。覆盖安静且精密的工作空间、连续低噪声表面、跨页面产品语法、真实生命周期、领域语义色、六类工作型页面范式（含空间编排与结构化编辑器），以及 Review、Refine、Migrate、Create 四种工作模式。当用户明确提到 MANAS、类纸工作空间、沿用 MANAS 风格，或目标仓库已声明采用 MANAS 时使用；不要仅因普通的‘简洁’‘现代’或‘极简’请求自动触发。"
 ---
 
 # MANAS 类纸工作空间
@@ -20,8 +20,9 @@ description: "用于在 Web 项目中创建、审查、优化或迁移明确采�
 2. 阅读 `references/design-foundations.md`，按其中的优先级、表面关系、密度、色彩、交互和后备尺度作出设计判断。
 3. 阅读 `references/page-archetypes.md`，根据用户的主任务选择页面范式；混合页面最多指定一个主范式和一个辅助范式。
 4. 在 Refine、Migrate、Create 或涉及复杂状态的 Review 中阅读 `references/implementation-method.md`。先映射现有设计系统并生成页面状态矩阵，再决定实现结构。
-5. 在授权模式内完成最小必要工作。修改共享组件、全局壳层、API、服务端、持久化或共享契约前，先说明证据、影响面和验证方案并请求扩展范围。
-6. 阅读 `references/verification-and-delivery.md`，执行与风险相称的分层验证，并按当前模式的交付契约报告结果。严格区分已验证、失败和无法验证的项目。
+5. 当用户明确引用 Audio Harness、要求沿用其气质，或目标包含类型化图编辑器且需要校准“安静而精密”的工具感时，阅读 `references/audio-harness-calibration.md`。只抽象关系，不复制案例的颜色、尺寸、文案或固定布局。
+6. 在授权模式内完成最小必要工作。修改共享组件、全局壳层、API、服务端、持久化或共享契约前，先说明证据、影响面和验证方案并请求扩展范围。
+7. 阅读 `references/verification-and-delivery.md`，执行与风险相称的分层验证，并按当前模式的交付契约报告结果。严格区分已验证、失败和无法验证的项目。
 
 ## 不可妥协的顺序
 
